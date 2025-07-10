@@ -4,10 +4,24 @@
         "command": "npx",
         "args": ["-y","@modelcontextprotocol/server-slack"],
         "env":{
-            "SLACK_BOT_TOKEN": "xxx",
-            "SLACK_TEAM_ID": "xxx",
-            "SLACK_CHANNEL_IDS": "xxx"
-            }
+          "SLACK_BOT_TOKEN": "xxx",
+          "SLACK_TEAM_ID": "xxx",
+          "SLACK_CHANNEL_IDS": "xxx"
+          }
+      },
+      "tavily": {
+        "command": "npx",
+        "args": ["-y", "tavily-mcp@latest"],
+        "env": {
+          "TAVILY_API_KEY": "xxx"
+        }
+      },
+      "playwright": {
+        "command": "npx",
+        "args": [
+          "@playwright/mcp@latest",
+          "--headless"
+        ]
       }
     }
 }
