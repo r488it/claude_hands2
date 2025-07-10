@@ -1,7 +1,10 @@
 ## Setup Instructions
 ```bash
+cd docker
 docker build --platform linux/amd64 -t claude_hands_2 .
 docker build -t claude_hands_2 .
+
+cd ..
 docker-compose up -d
 
 docker exec -it claude_hands2-agent-1 bash  
@@ -17,6 +20,3 @@ uv run agent.py "自己紹介して、にSlackに投稿して"
 
 # run server
 node claude_hands2.js
-
-
-uv run agent.py "Slack一覧を取得して"
