@@ -5,7 +5,7 @@ services:
       - ${WORKSPACE_PATH}:/workspace
     restart: unless-stopped
     ports:
-      - "9999:9999"
+      - "9998:9998"
     stdin_open: true 
     environment:
       # - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
