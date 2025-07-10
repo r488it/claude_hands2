@@ -10,6 +10,10 @@ async def generate_code(prompt: str):
     try:
         options = ClaudeCodeOptions(
             # max_turns=50,
+            disallowed_tools=[
+                "Bash(rm -rf)",  # 危険なコマンドを拒否
+                "mcp__slack__slack_post_message"
+            ],
             allowed_tools=["Read", "Write", "Bash"],
             permission_mode="bypassPermissions"  # すべての権限をバイパス
         )

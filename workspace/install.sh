@@ -1,3 +1,5 @@
+mkdir log
+mkdir hands
 uv venv 
 source .venv/bin/activate 
 uv pip sync requirements.txt 

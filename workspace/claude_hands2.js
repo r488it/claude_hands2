@@ -28,7 +28,7 @@ app.event('app_mention', async ({ event }) => {
     const now = new Date();
     const timestamp = now.toISOString().replace(/[:.]/g, '-').slice(0, 19); // YYYY-MM-DDTHH-MM-SS
     const logFileName = `./log/claude_hands_${timestamp}.log`;
-    const command = `uv run agent.py "次のメンション内容にslackで返信して、${prompt} メンションされたメッセージの情報[ parent_user_id:${parent_user_id},client_msg_id:${client_msg_id},thread_ts:${thread_ts}]" > ${logFileName}`;
+    const command = `uv run agent.py "think ${prompt} メンションされたメッセージの情報[ parent_user_id:${parent_user_id},client_msg_id:${client_msg_id},thread_ts:${thread_ts}]" > ${logFileName}`;
     
     console.log('バックグラウンドで実行:', command);
     
