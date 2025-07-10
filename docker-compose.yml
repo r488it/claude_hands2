@@ -1,0 +1,27 @@
+services:
+  agent:
+    image: claude_hands_2
+    volumes:
+      - ${WORKSPACE_PATH}:/workspace
+    restart: unless-stopped
+    stdin_open: true 
+    environment:
+      # - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      # - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      # - AWS_REGION=${AWS_REGION}
+      # - ANTHROPIC_MODEL=${ANTHROPIC_MODEL}
+      # - CLAUDE_CODE_USE_BEDROCK=1
+
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}
+      - SLACK_TEAM_ID=${SLACK_TEAM_ID}
+      - SLACK_CHANNEL_IDS=${SLACK_CHANNEL_IDS}
+      - SLACK_APP_TOKEN=${SLACK_APP_TOKEN}
+      - SLACK_SIGNING_SECRET=${SLACK_SIGNING_SECRET}
+    # command: >
+    #     bash -c "
+    #       uv venv &&
+    #       source .venv/bin/activate &&
+    #       uv pip sync requirements.txt &&
+    #       npm install @slack/bolt dotenv &&
+    #       node claude_hands2.js
+    #     "
